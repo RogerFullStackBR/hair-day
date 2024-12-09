@@ -1,5 +1,6 @@
-const { prototype } = require("events");
 const path = require("path");
+const htmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = {
   target: "web",
   mode: "development",
@@ -18,4 +19,10 @@ module.exports = {
     open: true,
     liveReload: true,
   },
+
+  plugins: [
+    new htmlWebpackPlugin({
+      template: path.resolve(__dirname, "index.html"),
+    }),
+  ],
 };
